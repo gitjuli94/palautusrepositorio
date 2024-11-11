@@ -16,6 +16,7 @@ def main():
     players = stats.top_scorers_by_nationality(nationality)
     table = Table(title="")
 
+    #luodaan taulukko
     table.add_column("name", style="cyan", no_wrap=True)
     table.add_column("team", style="magenta")
     table.add_column("goals", justify="right", style="green")
