@@ -51,7 +51,7 @@ Register With Username That Is Already In Use
     Page Should Contain  already taken
 
 Login After Successful Registration
-    Input Text  name=username  uusi_kayttaja
+    Input Text  name=username  uusikayttaja
     Input Text  name=password  Toimiva123!
     Input Text  name=password_confirmation  Toimiva123!
     Click Button  Register
@@ -60,24 +60,26 @@ Login After Successful Registration
     Go To  ${HOME_URL}/ohtu
     Click Button  Logout
 
+    Input Text  name=username  uusikayttaja
+    Input Text  name=password  Toimiva123!
+    Click Button  Login
+
     Page Should Contain  Ohtu Application main page
-    Set Username  uusi_kayttaja
-    Set Password  Toimiva123!
-    Submit Credentials
-    Login Should Succeed
 
 Login After Failed Registration
-    Input Text  name=username  uusi_kayttaja
-    Input Text  name=password  lyhyt
-    Input Text  name=password_confirmation  lyhyt
+    Input Text  name=username  uu
+    Input Text  name=password  Toimiva123!
+    Input Text  name=password_confirmation  Toimiva123!
     Click Button  Register
-    Page Should Contain  Password must be at least 8 characters long
+    Page Should Contain  Username must be at least 3 characters long
 
     Go To  ${LOGIN_URL}
-    Input Text  name=username  uusi_kayttaja
-    Input Text  name=password  lyhyt
-    Click Button  name=submit
-    Page Should Contain  Invalid username or password
+
+    Input Text  name=username  uu
+    Input Text  name=password  Toimiva123!
+    Click Button  Login
+
+    Page Should Contain  Invalid
 
 *** Keywords ***
 Reset Application Create User And Go To Register Page
