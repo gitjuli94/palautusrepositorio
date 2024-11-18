@@ -24,10 +24,20 @@ Open And Configure Browser
     ELSE
         Set Selenium Speed  ${DELAY}
     END
-    Open Browser  ${HOME_URL}  browser=${BROWSER}  options=${options}
+    Open Browser  browser=${BROWSER}  options=${options}
+
+Login Page Should Be Open
+    Title Should Be  Login
+
+Main Page Should Be Open
+    Title Should Be  Ohtu Application main page
+
+Go To Login Page
+    Go To  ${LOGIN_URL}
 
 Go To Starting Page
     Go To  ${HOME_URL}
 
-Reset Application
-    Reset Application  # Calls AppLibrary's reset_application method
+Register Page Should Be Open
+    Title Should Be  Register
+
