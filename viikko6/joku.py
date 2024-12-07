@@ -1,0 +1,2 @@
+def jokufunktio():
+    pass
